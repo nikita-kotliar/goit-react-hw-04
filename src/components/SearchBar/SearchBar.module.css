@@ -1,0 +1,26 @@
+.input {
+  font-family: inherit;
+  width: 232px;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.2rem;
+  color: white;
+  padding: 7px;
+  padding-right: 2px;
+  background: transparent;
+}
+
+.form {
+  display: flex;
+  gap: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+/* .button {
+    margin-left: 250px;
+} */
