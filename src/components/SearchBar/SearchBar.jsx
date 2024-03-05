@@ -1,4 +1,5 @@
 import css from "./SearchBar.module.css";
+import toast, { Toaster } from "react-hot-toast";
 export default function SearchBar({ onSubmit }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -6,7 +7,7 @@ export default function SearchBar({ onSubmit }) {
     const topic = form.elements.topic.value;
 
     if (topic.trim() === "") {
-      alert("Please enter search term!");
+      toast.error("Please enter search term!");
       return;
     }
     onSubmit(topic);
@@ -16,6 +17,7 @@ export default function SearchBar({ onSubmit }) {
   return (
     <header className={css.header}>
       <form className={css.form} onSubmit={handleSubmit}>
+        <Toaster position="top-center" reverseOrder={false} />
         <input
           className={css.input}
           type="text"

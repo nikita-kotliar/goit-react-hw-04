@@ -8,28 +8,28 @@ import { fetchArticlesWithTopic } from "./articles-api.js";
 import { useState } from "react";
 
 function App() {
-  const [articles, setArticles] = useState([]);
+  const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [theme, setTheme] = useState("");
   const [page, setPage] = useState(1);
 
-  const handleSearch = async (topic, gg) => {
+  const handleSearch = async (topic, load) => {
     try {
       setTheme(topic);
       setLoading(true);
       setError(false);
 
       let nextPage = page;
-      if (gg === "jj") {
+      if (load === "loadMore") {
         nextPage = page + 1;
       } else {
-        setArticles([]);
+        setImages([]);
         nextPage = 1;
       }
 
       const data = await fetchArticlesWithTopic(topic, nextPage);
-      setArticles((prevArticles) => [...prevArticles, ...data.results]);
+      setImages((prevArticles) => [...prevArticles, ...data.results]);
       setPage(nextPage);
     } catch (error) {
       setError(true);
@@ -40,11 +40,10 @@ function App() {
 
   return (
     <>
-      {/* <ImageModal/> */}
       <SearchBar onSubmit={handleSearch} />
       {loading && <Loader />}
       {error && <Error />}
-      {articles.length != [] && <ImageGallery articles={articles} />}
+      {images.length != [] && <ImageGallery articles={images} />}
       <LoadMoreBtn onClick={handleSearch} topic={theme} />
     </>
   );

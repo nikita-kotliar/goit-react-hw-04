@@ -2,9 +2,7 @@ import css from "./LoadMoreBtn.module.css";
 
 export default function LoadMoreBtn({ onClick, topic }) {
   const handleClick = async () => {
-    console.log(topic);
-    const gg = "jj";
-    onClick(topic, gg);
+    onClick(topic, "loadMore");
   };
 
   return (
