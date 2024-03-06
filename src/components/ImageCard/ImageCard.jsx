@@ -3,7 +3,7 @@ import { useState } from "react";
 import ImageModal from "../ImageModal/ImageModal";
 
 
-export default function ImageCard({ image }) {
+export default function ImageCard({ image, alt }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -21,6 +21,7 @@ export default function ImageCard({ image }) {
         onClick={() => openModal(image.urls.raw + "&w=1500&dpr=2")}
         className={css.img}
         src={image}
+        alt={alt}
       />
       <ImageModal
         isOpen={modalIsOpen}

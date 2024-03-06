@@ -2,7 +2,7 @@ import css from "./LoadMoreBtn.module.css";
 
 export default function LoadMoreBtn({ onClick, topic }) {
   const handleClick = async () => {
-    onClick(topic, "loadMore");
+    onClick(topic);
   };
 
   return (
