@@ -9,7 +9,6 @@ export default function ImageGallery( images ) {
       <ul className={css.ul}>
         {images.articles.map(
           (image, index) => (
-            console.log(image),
             (
               <li key={index} className={css.li}>
                 <ImageCard
