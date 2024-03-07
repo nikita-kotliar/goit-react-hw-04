@@ -18,7 +18,7 @@ export default function ImageCard({ image, alt }) {
   return (
     <>
       <img
-        onClick={() => openModal(image.urls.raw + "&w=1500&dpr=2")}
+        onClick={() => openModal(image)}
         className={css.img}
         src={image}
         alt={alt}
