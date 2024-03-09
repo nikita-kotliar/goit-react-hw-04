@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState(false);
   const [topic, setTopic] = useState("");
   const [page, setPage] = useState(1);
-  const [selectedImage, setSelectedImage] = useState(null); // Added state for selected image
+  const [selectedImage, setSelectedImage] = useState(null); 
 
   useEffect(() => {
     if (topic) {
@@ -39,7 +39,7 @@ function App() {
     setTopic(searchTerm);
     setPage(1);
     setImages([]);
-    setSelectedImage(null); // Reset selected image on new search
+    setSelectedImage(null); 
   };
 
   const handleLoadMore = () => {
@@ -47,7 +47,7 @@ function App() {
   };
 
   const handleImageClick = (image) => {
-    setSelectedImage(image); // Update selected image on click
+    setSelectedImage(image); 
   };
 
   return (

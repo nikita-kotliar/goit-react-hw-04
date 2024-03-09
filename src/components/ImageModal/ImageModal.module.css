@@ -1,3 +1,10 @@
 .img {
     width: 50%;
 }
+
+.button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(158, 158, 158);
+}
